@@ -1,4 +1,3 @@
-
 package ge.mziuri.servlet;
 
 import ge.mziuri.dao.UserDAO;
@@ -15,12 +14,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class LoginServlet extends HttpServlet {
-    
+
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) {
         response.setStatus(403);
     }
-    
+
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException {
         try {
@@ -31,28 +30,16 @@ public class LoginServlet extends HttpServlet {
             response.setContentType("text/html");
             response.setCharacterEncoding("UTF-8");
             if (user == null) {
-                RequestDispatcher rd = request.getRequestDispatcher("index.html");
-                  rd.forward(request, response);
+                RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+                request.setAttribute("incorrectPassword", true);
+                rd.forward(request, response);
             } else {
-           
-              /* Cookie[] cookies = request.getCookies();
-                int count = 0;
-                if (cookies != null) {
-                    for (Cookie cookie : cookies) {
-                        if (cookie.getName().equals("countVisits")) {
-                            count = Integer.parseInt(cookie.getValue());
-                        }
-                    }
-                }
-                count++;
-                Cookie cookie = new Cookie("countVisits", String.valueOf(count));
-                response.addCookie(cookie);
-                printWriter.append("ეს არის " + count + " შემოსვლა");
-          */ }
-            
+                RequestDispatcher rd = request.getRequestDispatcher("auction.html");
+                rd.forward(request, response);
+            }
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
     }
-    
+
 }

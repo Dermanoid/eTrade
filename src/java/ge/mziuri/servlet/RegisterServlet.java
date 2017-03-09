@@ -27,7 +27,7 @@ public class RegisterServlet extends HttpServlet {
         User user = new User(firstName, lastName, username, String.valueOf(password.hashCode()));
         UserDAO userDAO = new UserDAOImpl();
         userDAO.register(user);
-        RequestDispatcher rd = request.getRequestDispatcher("index.html");
+        RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
         rd.forward(request, response);
     }
     

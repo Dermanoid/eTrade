@@ -2,6 +2,7 @@ package ge.mziuri.model;
 
 public class Item {
 
+    public User user;
     private String photo;
     private String Name;
     public int Point;

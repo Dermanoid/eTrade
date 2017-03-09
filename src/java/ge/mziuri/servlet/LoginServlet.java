@@ -6,6 +6,9 @@ import ge.mziuri.dao.UserDAOImpl;
 import ge.mziuri.model.User;
 import java.io.IOException;
 import java.io.PrintWriter;
+import static java.lang.System.out;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -19,7 +22,7 @@ public class LoginServlet extends HttpServlet {
     }
     
     @Override
-    public void doPost(HttpServletRequest request, HttpServletResponse response) {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException {
         try {
             String username = request.getParameter("username");
             String password = request.getParameter("password");
@@ -27,11 +30,12 @@ public class LoginServlet extends HttpServlet {
             User user = userDAO.login(username, String.valueOf(password.hashCode()));
             response.setContentType("text/html");
             response.setCharacterEncoding("UTF-8");
-            PrintWriter printWriter = response.getWriter();
             if (user == null) {
-                printWriter.append("არასწორი სახელი ან პაროლი");
+                RequestDispatcher rd = request.getRequestDispatcher("index.html");
+                  rd.forward(request, response);
             } else {
-                Cookie[] cookies = request.getCookies();
+           
+              /* Cookie[] cookies = request.getCookies();
                 int count = 0;
                 if (cookies != null) {
                     for (Cookie cookie : cookies) {
@@ -44,7 +48,7 @@ public class LoginServlet extends HttpServlet {
                 Cookie cookie = new Cookie("countVisits", String.valueOf(count));
                 response.addCookie(cookie);
                 printWriter.append("ეს არის " + count + " შემოსვლა");
-            }
+          */ }
             
         } catch (IOException ex) {
             System.out.println(ex.getMessage());

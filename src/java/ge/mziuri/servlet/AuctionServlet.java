@@ -1,4 +1,3 @@
- 
 package ge.mziuri.servlet;
 
 import ge.mziuri.dao.UserDAO;
@@ -11,24 +10,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class RegisterServlet extends HttpServlet {
-    
+public class AuctionServlet extends HttpServlet {
+
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        
+
     }
-    
+
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String firstName = request.getParameter("firstName");
-        String lastName = request.getParameter("lastName");
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        User user = new User(firstName, lastName, username, String.valueOf(password.hashCode()));
-        UserDAO userDAO = new UserDAOImpl();
-        userDAO.register(user);
-        RequestDispatcher rd = request.getRequestDispatcher("index.html");
+        String Name = request.getParameter("Name");
+        String TextDescription = request.getParameter("TextDescription");
+        String Photo = request.getParameter("photo");
+        RequestDispatcher rd = request.getRequestDispatcher("auction.html");
         rd.forward(request, response);
     }
-    
+
 }

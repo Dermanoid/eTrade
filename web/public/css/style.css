@@ -19,19 +19,19 @@
 }
 
 .AuctionForm {
-    text-align: center;
+    text-align: left;
     border-style: solid;
     border-color: #8C8C8C;
     border-width: 1px;
     padding: 10px;
     width: 180px;
-    margin: auto;
+  
     margin-top: 20px;
 
 }
 
 .Search  {
-    text-align: center; 
+    text-align: left; 
 
 }
 
@@ -65,3 +65,16 @@
 
 }
 
+.AUForm {
+    text-align: center;
+}
+
+.AUForm ul li {
+    display:inline-block;
+    padding: 10px;
+
+}
+.AUForm ul li a {
+
+    text-decoration: none;
+}

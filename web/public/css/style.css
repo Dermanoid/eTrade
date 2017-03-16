@@ -4,9 +4,9 @@
 }
 
 .notCorrectUsername {
-        text-align: center;
-        color: red ;
-    }
+    text-align: center;
+    color: red ;
+}
 
 .RegisterForm {
     text-align: center;
@@ -19,5 +19,49 @@
 }
 
 .AuctionForm {
+    text-align: center;
+    border-style: solid;
+    border-color: #8C8C8C;
+    border-width: 1px;
+    padding: 10px;
+    width: 180px;
+    margin: auto;
+    margin-top: 20px;
 
 }
+
+.Search  {
+    text-align: center; 
+
+}
+
+.navigationPanel {
+    text-align: center ;
+
+}
+.navigationPanel ul li {
+    display:inline-block;
+    padding: 10px;
+}
+
+.navigationPanel ul li a {
+    text-decoration: none;
+}
+
+
+.PAForm  {
+    text-align: center;
+
+}
+
+.PAForm ul li {
+    display:inline-block;
+    padding: 10px;
+
+}
+.PAForm ul li a {
+    text-decoration: none;
+
+
+}
+

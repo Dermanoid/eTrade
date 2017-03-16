@@ -4,21 +4,25 @@
         <title>აუქციონი</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+          <link rel="stylesheet" type="text/css" href="public/css/style.css">
     </head>
     <body>
-        <ul>
-            <li><a href="auction.html">მთავარი</a></li>
-            <li><a href="PersonalAcc.html">ჩემი ანგარიში</a></li>
-            <li><a href="#about">ჩვენ შესახებ</a></li>
-        </ul>
-        
+        <div class="navigationPanel">
+            <ul>
+                <li><a href="auction.html">მთავარი</a></li>
+                <li><a href="PersonalAcc.html">ჩემი ანგარიში</a></li>
+                <li><a href="#about">ჩვენ შესახებ</a></li>
+            </ul>
+        </div>
+
         <form action="" method="post">
-            <input type="text" name="search" placeholder="Search..">
+            <div class="Search">    
+            <input type="text" name="search"  placeholder="Search..">
             <button type="submit" name="Submit ">S</button>
+           <div/>
         </form>
 
-        <form action="AuctionServlet" method="post">
+        <form action="AuctionServlet"  method="post">
             <div class="AuctionForm">
                 <img src="Photo" alt="Error: 404" />
                 <p> <input type="text" name="description" value="TextDescription" />  </p>

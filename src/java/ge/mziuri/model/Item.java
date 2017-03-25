@@ -10,10 +10,19 @@ public class Item {
     public Item() {
     }
 
-    public Item(String photo, String Name, int Point) {
+    public Item(String photo, String Name, int Point, User User) {
         this.photo = photo;
         this.Name = Name;
         this.Point = Point;
+        this.user = User;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public String getPhoto() {

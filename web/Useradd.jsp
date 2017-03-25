@@ -8,14 +8,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-         <meta charset="UTF-8">
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-          <link rel="stylesheet" type="text/css" href="public/css/style.css">
+        <link rel="stylesheet" type="text/css" href="public/css/style.css">
         <title>ნივთის დამატება</title>
     </head>
     <body>
-         <div class="UAForm">
+        <div class="UAForm">
             <h5 style ="display: inline-block ">სახელი : </h5>  <input type="text" name="Name" /> <br>
             <h5 style ="display: inline-block ">ნივთის ტიპი :</h5> 
             <select name="Types">
@@ -36,8 +36,9 @@
             <h5>დაამატეთ ფოტო : </h5> <img src="Photo" alt="Error: 404" /> <img src="Photo" alt="Error: 404" /> <img src="Photo" alt="Error: 404" /> <br>
             <button type = "button" name = "addbutton">ფოტოს ჩამატება</button> <br>
             <h5 style="display:inline-block;">ნივთის შეფასება :</h5>  
+            
             <input style="width: 35px;" readonly type="text" name="Pointvalue" value="" />  <br>
             <input  type="submit" value="ნივთის დამატება" />
-</div>
+        </div>
     </body>
 </html>

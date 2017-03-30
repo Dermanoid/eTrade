@@ -34,10 +34,7 @@
             </textarea> <br>
 
             <h5>დაამატეთ ფოტო : </h5> <img src="Photo" alt="Error: 404" /> <img src="Photo" alt="Error: 404" /> <img src="Photo" alt="Error: 404" /> <br>
-            <button type = "button" name = "addbutton">ფოტოს ჩამატება</button> <br>
-            <h5 style="display:inline-block;">ნივთის შეფასება :</h5>  
-            
-            <input style="width: 35px;" readonly type="text" name="Pointvalue" value="" />  <br>
+            <button style="margin-bottom: 20px; margin-left: 5px" type = "button" name = "addbutton">ფოტოს ჩამატება</button> <br>          
             <input  type="submit" value="ნივთის დამატება" />
         </div>
     </body>

@@ -34,6 +34,8 @@ public class LoginServlet extends HttpServlet {
                 request.setAttribute("incorrectPassword", true);
                 rd.forward(request, response);
             } else {
+                Cookie cookie = new Cookie("logedInUserId", String.valueOf(user.getId()));
+                response.addCookie(cookie);
                 RequestDispatcher rd = request.getRequestDispatcher("auction.html");
                 rd.forward(request, response);
             }

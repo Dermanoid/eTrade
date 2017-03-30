@@ -2,7 +2,8 @@ package ge.mziuri.model;
 
 public class Item {
 
-    public User user;
+    private int id;
+    private User user;
     private String photo;
     private String Name;
     public int Point;
@@ -10,11 +11,12 @@ public class Item {
     public Item() {
     }
 
-    public Item(String photo, String Name, int Point, User User) {
-        this.photo = photo;
-        this.Name = Name;
-        this.Point = Point;
-        this.user = User;
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public User getUser() {
@@ -48,5 +50,4 @@ public class Item {
     public void setPoint(int Point) {
         this.Point = Point;
     }
-
 }

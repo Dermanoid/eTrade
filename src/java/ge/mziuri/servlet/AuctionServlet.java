@@ -1,8 +1,4 @@
 package ge.mziuri.servlet;
-
-import ge.mziuri.dao.UserDAO;
-import ge.mziuri.dao.UserDAOImpl;
-import ge.mziuri.model.User;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

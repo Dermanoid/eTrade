@@ -14,6 +14,32 @@
                 <li><a href="AboutUs.html">ჩვენ შესახებ</a></li>
             </ul>
         </div>
+        
+        <button type="button" id="InboxBtn"></button>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Notifications Will be here</p>
+            </div>
+        </div>
+
+        <script>
+            var modal = document.getElementById('myModal');
+
+            var btn = document.getElementById("InboxBtn");
+
+            var span = document.getElementsByClassName("close")[0];
+
+            btn.onclick = function () {
+                modal.style.display = "block";
+            };
+
+            span.onclick = function () {
+                modal.style.display = "none";
+            };
+
+            
+        </script>  
 
         <form action="" method="post">
             <div class="Search">    
@@ -30,5 +56,6 @@
                 </textarea>
             </div>
         </form>
+
     </body>
 </html>

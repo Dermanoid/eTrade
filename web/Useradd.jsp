@@ -32,10 +32,27 @@
             <textarea  rows="5" cols="5">
                     
             </textarea> <br>
-
-            <h5>დაამატეთ ფოტო : </h5> <img src="Photo" alt="Error: 404" /> <img src="Photo" alt="Error: 404" /> <img src="Photo" alt="Error: 404" /> <br>
-            <button style="margin-bottom: 20px; margin-left: 5px" type = "button" name = "addbutton">ფოტოს ჩამატება</button> <br>          
+            <h5>დაამატეთ ფოტო : </h5> <img id="inp1" width="320" height="200"  src="Photo" alt="Error: 404" /> <img width="320" height="200" id="inp2" src="Photo" alt="Error: 404" /> <img width="320" height="200" id="inp3" src="Photo" alt="Error: 404" /> <br>
+            <input id="FileUpload"   style="margin-bottom: 20px; margin-left: 90px" type="file" accept="image/*" onchange="loadFile(event)" multiple  > <br>
+            <script>
+                var loadFile = function (event) {
+                    var output = document.getElementById('inp1');
+                    output.src = URL.createObjectURL(event.target.files[0]);
+                    var output = document.getElementById('inp2');
+                    output.src = URL.createObjectURL(event.target.files[1]);
+                    var output = document.getElementById('inp3');
+                    output.src = URL.createObjectURL(event.target.files[2]);
+                    var files = document.getElementById('FileUpload').files;
+                    if (files.length > 3) {
+                        alert("Files count is more then 3");
+                      executeScript();
+                    }
+                };
+            </script>        
             <input  type="submit" value="ნივთის დამატება" />
         </div>
     </body>
 </html>
+
+
+

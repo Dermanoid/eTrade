@@ -7,8 +7,26 @@ public class Item {
     private String photo;
     private String Name;
     public int Point;
-
+    public ProdType type;
+    
     public Item() {
+    }
+
+    public Item(int id, User user, String photo, String Name, int Point, ProdType type) {
+        this.id = id;
+        this.user = user;
+        this.photo = photo;
+        this.Name = Name;
+        this.Point = Point;
+        this.type = type;
+    }
+
+    public ProdType getType() {
+        return type;
+    }
+
+    public void setType(ProdType type) {
+        this.type = type;
     }
 
     public int getId() {

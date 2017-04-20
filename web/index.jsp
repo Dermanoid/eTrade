@@ -2,13 +2,20 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
+    <head  >
 
         <title>შესვლა</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="public/css/style.css">
     </head>
-    <body>
+    <style>
+        .IndBodyForm{
+     // Background space
+     
+        }
+       
+        </style>
+    <body class='IndBodyForm' >
 
         <div class="LoginForm">
             <form action="LoginServlet" method="post">

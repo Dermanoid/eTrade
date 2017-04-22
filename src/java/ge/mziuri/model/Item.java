@@ -4,7 +4,7 @@ public class Item {
 
     private int id;
     private User user;
-    private String photo;
+    private String photo [];
     private String Name;
     public int Point;
     public ProdType type;
@@ -12,7 +12,7 @@ public class Item {
     public Item() {
     }
 
-    public Item(int id, User user, String photo, String Name, int Point, ProdType type) {
+    public Item(int id, User user, String photo[], String Name, int Point, ProdType type) {
         this.id = id;
         this.user = user;
         this.photo = photo;
@@ -45,13 +45,15 @@ public class Item {
         this.user = user;
     }
 
-    public String getPhoto() {
+    public String[] getPhoto() {
         return photo;
     }
 
-    public void setPhoto(String photo) {
+    public void setPhoto(String[] photo) {
         this.photo = photo;
     }
+
+   
 
     public String getName() {
         return Name;

@@ -25,7 +25,7 @@ public class SearchDAOImpl implements SearchDAO {
             if (rs.next()) {
                 Item item = new Item();
                 item.setName(rs.getString("name"));
-                item.setPhoto(rs.getString("photo"));
+                item.setPhoto[](rs.getString("photo[]"));
                 item.setPoint(rs.getInt("Point"));
                 return item;
             }

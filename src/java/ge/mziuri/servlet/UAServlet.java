@@ -1,5 +1,4 @@
 package ge.mziuri.servlet;
-
 import ge.mziuri.model.Item;
 import ge.mziuri.model.User;
 import java.io.IOException;
@@ -9,6 +8,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import util.StringUtil;
 
 @WebServlet(name = "UAServlet", urlPatterns = {"/UAServlet"})
 public class UAServlet extends HttpServlet {
@@ -35,7 +35,7 @@ public class UAServlet extends HttpServlet {
         item.setPoint(0);
         item.setName(Name);
         item.setPoint(Integer.parseInt(point));
-        item.setPhoto(photo);
+        item.setPhoto(StringUtil.getStringFromList(photo));
         User user = new User();
         // VVX  int Rnd = item.getPoint() + (100 % 3) + 3 % 4 - 32;
         for (Cookie cookie : request.getCookies()) {

@@ -5,11 +5,14 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import static java.util.Collections.list;
+import java.util.List;
+import util.StringUtil;
 
 public class SearchDAOImpl implements SearchDAO {
 
     private Connection con;
-
+        
     private PreparedStatement pstmt;
 
     public SearchDAOImpl() {
@@ -25,7 +28,7 @@ public class SearchDAOImpl implements SearchDAO {
             if (rs.next()) {
                 Item item = new Item();
                 item.setName(rs.getString("name"));
-                item.setPhoto[](rs.getString("photo[]"));
+                item.setPhoto(StringUtil.getStringFromList(empty));
                 item.setPoint(rs.getInt("Point"));
                 return item;
             }

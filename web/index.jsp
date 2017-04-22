@@ -7,7 +7,12 @@
         <title>შესვლა</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="public/css/style.css">
-    </head>
+    <style>
+		body {
+    		background-color: CornflowerBlue;
+		}
+	</style>
+	</head>
     <style>
         .IndBodyForm{
      // Background space
@@ -17,7 +22,7 @@
         </style>
     <body class='IndBodyForm' >
 
-        <div class="LoginForm">
+        <div class="LoginForm"  style="background-color: AliceBlue;">
             <form action="LoginServlet" method="post">
                 <input type="text" name="username" /> <br>
                 <input type="password" name="password" /> <br>

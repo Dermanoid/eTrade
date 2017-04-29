@@ -2,7 +2,7 @@
 package ge.mziuri.model;
  
 public enum ProdType {
-  ავეჯი,ტექნიკა,მანქანა,მიწა,სახლი,წვრილმანი
+  FURNITURE,TECH,CAR,GROUND,HOUSE,LITLE_STUFF
  
     
 }

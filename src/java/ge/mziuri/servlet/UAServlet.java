@@ -44,7 +44,7 @@ public class UAServlet extends HttpServlet {
         item.setPoint(0);
         item.setName(Name);
         item.setPoint(Integer.parseInt(point));
-        item.setPhoto(photos); 
+        item.setPhotoes(photos); 
         User user = new User();
         // VVX  int Rnd = item.getPoint() + (100 % 3) + 3 % 4 - 32;
         for (Cookie cookie : request.getCookies()) {

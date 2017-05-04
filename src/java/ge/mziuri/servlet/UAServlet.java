@@ -2,6 +2,8 @@ package ge.mziuri.servlet;
 import ge.mziuri.model.Item;
 import ge.mziuri.model.User;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
@@ -28,9 +30,13 @@ public class UAServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String Condition = request.getParameter("Condition");
         String type = request.getParameter("Types");
-        String photo = request.getParameter("photo");
+        String photo1 = request.getParameter("photo1");
+        String photo2 = request.getParameter("photo2");
+        String photo3 = request.getParameter("photo3");  
         String point = request.getParameter("Point");
         String Name = request.getParameter("name");
+        List<String> list = new ArrayList<>();
+                
         Item item = new Item();
         item.setPoint(0);
         item.setName(Name);

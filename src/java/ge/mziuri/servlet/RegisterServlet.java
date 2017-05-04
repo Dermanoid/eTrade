@@ -1,5 +1,4 @@
- 
-package ge.mziuri.servlet;
+ package ge.mziuri.servlet;
 
 import ge.mziuri.dao.UserDAO;
 import ge.mziuri.dao.UserDAOImpl;
@@ -30,5 +29,4 @@ public class RegisterServlet extends HttpServlet {
         RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
         rd.forward(request, response);
     }
-    
 }

@@ -4,8 +4,6 @@ import ge.mziuri.dao.UserDAO;
 import ge.mziuri.dao.UserDAOImpl;
 import ge.mziuri.model.User;
 import java.io.IOException;
-import java.io.PrintWriter;
-import static java.lang.System.out;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;

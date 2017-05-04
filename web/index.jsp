@@ -15,7 +15,6 @@
 	</head>
     <style>
         .IndBodyForm{
-     // Background space
      
         }
        

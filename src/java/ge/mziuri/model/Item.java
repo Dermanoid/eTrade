@@ -5,25 +5,30 @@ import java.util.List;
 public class Item {
 
     private int id;
+    
     private User user;
-    private List photo ;
-    private String Name;
-    public int Point;
+
+    private List<String> photoes;
+    
+    private String name;
+    
+    public int point;
+    
     public ProdType type;
     
     public Item() {
     }
 
-    public Item(List photo) {
-        this.photo = photo;
+    public Item(List<String> photoes) {
+        this.photoes = photoes;
     }
 
-    public Item(int id, User user, List photo , String Name, int Point, ProdType type) {
+    public Item(int id, User user, List<String> photoes , String name, int point, ProdType type) {
         this.id = id;
         this.user = user;
-        this.photo = photo;
-        this.Name = Name;
-        this.Point = Point;
+        this.photoes = photoes;
+        this.name = name;
+        this.point = point;
         this.type = type;
     }
 
@@ -51,29 +56,27 @@ public class Item {
         this.user = user;
     }
 
-    public List getPhoto() {
-        return photo;
+    public List<String> getPhotoes() {
+        return photoes;
     }
 
-    public void setPhoto(List photo) {
-        this.photo = photo;
+    public void setPhotoes(List<String> photoes) {
+        this.photoes = photoes;
     }
-
-   
 
     public String getName() {
-        return Name;
+        return name;
     }
 
-    public void setName(String Name) {
-        this.Name = Name;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getPoint() {
-        return Point;
+        return point;
     }
 
-    public void setPoint(int Point) {
-        this.Point = Point;
+    public void setPoint(int point) {
+        this.point = point;
     }
 }

@@ -1,9 +1,3 @@
-<%-- 
-    Document   : Useradd
-    Created on : Mar 23, 2017, 7:15:59 PM
-    Author     : C4C2
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

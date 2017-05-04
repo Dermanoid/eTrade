@@ -1,9 +1,5 @@
- 
-package ge.mziuri.model;
-
+ package ge.mziuri.model;
  
 public class History {
-    
-    
-    
+
 }

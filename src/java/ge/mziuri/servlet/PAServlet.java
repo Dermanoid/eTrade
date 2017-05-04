@@ -1,5 +1,4 @@
- 
-package ge.mziuri.servlet;
+ package ge.mziuri.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -23,24 +22,15 @@ public class PAServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        
-        
-        
-        
         processRequest(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        
-        
-        
-        
         processRequest(request, response);
     }
+    
     @Override
     public String getServletInfo() {
         return "Short description";

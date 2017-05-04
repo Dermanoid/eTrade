@@ -1,4 +1,5 @@
 package ge.mziuri.servlet;
+
 import ge.mziuri.model.Item;
 import ge.mziuri.model.User;
 import java.io.IOException;
@@ -10,7 +11,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import util.StringUtil;
+import ge.mziuri.util.StringUtil;
 
 @WebServlet(name = "UAServlet", urlPatterns = {"/UAServlet"})
 public class UAServlet extends HttpServlet {
@@ -35,13 +36,15 @@ public class UAServlet extends HttpServlet {
         String photo3 = request.getParameter("photo3");  
         String point = request.getParameter("Point");
         String Name = request.getParameter("name");
-        List<String> list = new ArrayList<>();
-                
+        List<String> photos = new ArrayList<>();
+        photos.add(photo1);
+        photos.add(photo2);
+        photos.add(photo3);
         Item item = new Item();
         item.setPoint(0);
         item.setName(Name);
         item.setPoint(Integer.parseInt(point));
-        item.setPhoto(StringUtil.getStringFromList(photo)); // ესარი Photos მაგივრად უნდა ჩაწერო
+        item.setPhoto(photos); 
         User user = new User();
         // VVX  int Rnd = item.getPoint() + (100 % 3) + 3 % 4 - 32;
         for (Cookie cookie : request.getCookies()) {
@@ -96,5 +99,4 @@ public class UAServlet extends HttpServlet {
 
         processRequest(request, response);
     }
-
 }

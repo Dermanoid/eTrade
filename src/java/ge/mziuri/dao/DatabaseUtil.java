@@ -7,17 +7,17 @@ import java.sql.SQLException;
 
 public class DatabaseUtil {
     
-    public static final String databaseURL = "jdbc:postgresql://localhost:5432/eTrade";
+    public static final String DATABASE_URL = "jdbc:postgresql://localhost:5432/eTrade";
     
-    public static final String username = "postgres";
+    public static final String USERNAME = "postgres";
     
-    public static final String passsword = "rame";
+    public static final String PASSWORD = "rame";
     
     public  static Connection getConnection() {
         Connection con = null;
         try {
             Class.forName("org.postgresql.Driver");
-            con = DriverManager.getConnection(databaseURL, username, passsword);
+            con = DriverManager.getConnection(DATABASE_URL, USERNAME, PASSWORD);
         } catch (ClassNotFoundException | SQLException ex) {
             System.out.println(ex.getMessage());
         }

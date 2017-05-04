@@ -1,5 +1,7 @@
 package ge.mziuri.model;
 
+import java.util.List;
+
 public class User {
 
     private int id;
@@ -12,7 +14,7 @@ public class User {
 
     private String password;
 
-    public Item[] Nivti;
+    public List<Item> items;
 
     public User() {
     }
@@ -25,8 +27,7 @@ public class User {
     }
     
     public void add(Item Nivti){
-      
-        
+ 
     }
 
     public int getId() {
@@ -67,6 +68,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }        
+
+    public List<Item> getItems() {
+        return items;
     }
-            
+
+    public void setItems(List<Item> items) {
+        this.items = items;
+    }
 }

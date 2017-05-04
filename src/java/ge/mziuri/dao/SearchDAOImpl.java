@@ -5,10 +5,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import static java.util.Collections.list;
 import java.util.List;
-import util.StringUtil;
+import ge.mziuri.util.StringUtil;
 
 public class SearchDAOImpl implements SearchDAO {
 
@@ -31,12 +30,14 @@ public class SearchDAOImpl implements SearchDAO {
                 item.setName(rs.getString("name"));
                 String m = rs.getString("Photo");
                 StringUtil st = new StringUtil();
-                item.setPhoto(st.getStringListFromString(m));
+                item.setPhotoes(st.getStringListFromString(m));
                 item.setPoint(rs.getInt("Point"));
                 return item;
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
+        } finally {
+            DatabaseUtil.closeConnection(con);
         }
         return null;
     }

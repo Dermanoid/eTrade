@@ -1,4 +1,3 @@
-
 package ge.mziuri.dao;
 
 import ge.mziuri.model.User;
@@ -28,6 +27,8 @@ public class UserDAOImpl implements UserDAO{
             pstmt.executeUpdate();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
+        } finally {
+            DatabaseUtil.closeConnection(con);
         }
     }
 
@@ -48,8 +49,9 @@ public class UserDAOImpl implements UserDAO{
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
+        } finally {
+            DatabaseUtil.closeConnection(con);
         }
         return null;
     }
-    
 }

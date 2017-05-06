@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import ge.mziuri.util.StringUtil;
 
 @WebServlet(name = "UAServlet", urlPatterns = {"/UAServlet"})
-public class UAServlet extends HttpServlet {
+public class AddItemServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -96,7 +96,78 @@ public class UAServlet extends HttpServlet {
         } else if (con >= 91 && con <= 100) {
             item.setPoint(item.getPoint() + 39);
         };
-
+//   try {
+//
+//            isMultipart = ServletFileUpload.isMultipartContent(request);
+//            response.setContentType("text/html");
+//
+//            DiskFileItemFactory factory = new DiskFileItemFactory();
+//            // maximum size that will be stored in memory
+//            factory.setSizeThreshold(maxMemSize);
+//            // Location to save data that is larger than maxMemSize.
+//            factory.setRepository(new File("c:\\temp"));
+//
+//            // Create a new file upload handler
+//            ServletFileUpload upload = new ServletFileUpload(factory);
+//            // maximum file size to be uploaded.
+//            upload.setSizeMax(maxFileSize);
+//
+//            // Parse the request to get file items.
+//            List fileItems = upload.parseRequest(request);
+//
+//            // Process the uploaded file items
+//            Iterator i = fileItems.iterator();
+//            Random random = new Random();
+//
+//            while (i.hasNext()) {
+//                FileItem fi = (FileItem) i.next();
+//                if (!fi.isFormField()) {
+//
+//                    String fieldName = fi.getName() + " " + fi.getFieldName();
+//                    String fileName = fi.getName();
+//                    String contentType = fi.getContentType();
+//                    boolean isInMemory = fi.isInMemory();
+//                    long sizeInBytes = fi.getSize();
+//
+//                    String extention = FilenameUtils.getExtension(fileName);
+//                    String imageName = FilenameUtils.removeExtension(fileName);
+//
+//                    if (fileName.lastIndexOf("\\") >= 0) {
+//                        fileName = imageName + random.nextInt() + "." + extention;
+//                        imagePath = fileName;
+//
+//                        file = new File(filePath
+//                                + fileName.substring(fileName.lastIndexOf("\\")));
+//
+//                    } else {
+//
+//                        fileName = imageName + random.nextInt() + "." + extention;
+//                        imagePath = fileName;
+//
+//                        file = new File(filePath
+//                                + fileName.substring(fileName.lastIndexOf("\\") + 1));
+//
+//                    }
+//                    try {
+//                        fi.write(file);
+//                    } catch (Exception ex) {
+//                        Logger.getLogger(addFoodServlet.class.getName()).log(Level.SEVERE, null, ex);
+//                    }
+//
+//                }
+//            }
+//
+//            Hashtable table = new Hashtable();
+//
+//            Iterator<FileItem> iter = fileItems.iterator();
+//            while (iter.hasNext()) {
+//
+//                FileItem item = iter.next();
+//                if (!item.getFieldName().equals("file")) {
+//                    table.put(item.getFieldName(), item.getString());
+//
+//                }
+//            }
         processRequest(request, response);
     }
 }

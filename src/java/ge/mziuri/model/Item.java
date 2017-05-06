@@ -16,20 +16,9 @@ public class Item {
     
     public ProdType type;
     
+    private String description;
+    
     public Item() {
-    }
-
-    public Item(List<String> photoes) {
-        this.photoes = photoes;
-    }
-
-    public Item(int id, User user, List<String> photoes , String name, int point, ProdType type) {
-        this.id = id;
-        this.user = user;
-        this.photoes = photoes;
-        this.name = name;
-        this.point = point;
-        this.type = type;
     }
 
     public ProdType getType() {
@@ -78,5 +67,13 @@ public class Item {
 
     public void setPoint(int point) {
         this.point = point;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

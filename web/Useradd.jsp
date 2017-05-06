@@ -13,12 +13,12 @@
             <h5 style ="display: inline-block ">სახელი : </h5>  <input type="text" name="Name" /> <br>
             <h5 style ="display: inline-block ">ნივთის ტიპი :</h5> 
             <select name="Types">
-                <option value="Furniture">ავეჯი</option>
-                <option value="Tech">ტექნიკა</option>
-                <option value="Car">მანქანა</option>
-                <option value="Ok">წვრილმანი</option>
-                <option value="Area">მიწა</option>
-                <option value="House">სახლი</option> 
+                <option value="FURNITURE">ავეჯი</option>
+                <option value="TECH">ტექნიკა</option>
+                <option value="CAR">მანქანა</option>
+                <option value="LITLE_STUFF">წვრილმანი</option>
+                <option value="GROUND">მიწა</option>
+                <option value="HOUSE">სახლი</option> 
             </select> <br>
             <h5 style ="display: inline-block">
                 ნივთის მდგომარეობა :</h5>  <input type="number" name="Condition" min="1" max="100"><br>

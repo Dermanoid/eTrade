@@ -1,15 +1,14 @@
 package ge.mziuri.dao;
 
-import ge.mziuri.model.ProdType;
-import ge.mziuri.model.User;
+import ge.mziuri.model.Item;
+import ge.mziuri.util.StringUtil;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
-import ge.mziuri.util.StringUtil;
 
-public class ItemDAOImpl {
+public class ItemDAOImpl implements ItemDAO {
 
     private Connection con;
 
@@ -19,20 +18,35 @@ public class ItemDAOImpl {
         con = DatabaseUtil.getConnection();
     }
 
-    public void item(int id, User user, List<String> photo, String name, int point, ProdType type) throws SQLException {
+    @Override
+    public void addItem(Item item) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public List<Item> getAllItem() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public List<Item> getAllItemByName(String name) {
         try {
-            pstmt = con.prepareStatement("SELECT * FROM item");
-            pstmt.setInt(1, id);
-            pstmt.setInt(2, user.getId());
-            pstmt.setString(3, StringUtil.getStringFromList(photo));
-            pstmt.setString(4, name);
-            pstmt.setInt(5, point);
-            pstmt.setString(6, type.name());
+            pstmt = con.prepareStatement("SELECT * FROM item  WHERE NAME=?");
+            pstmt.setString(1, name);
             ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                Item item = new Item();
+                item.setName(rs.getString("name"));
+                String m = rs.getString("Photo");
+                item.setPhotoes(StringUtil.getStringListFromString(m));
+                item.setPoint(rs.getInt("Point"));
+//                return item;
+            }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         } finally {
             DatabaseUtil.closeConnection(con);
         }
+        return null;
     }
 }

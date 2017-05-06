@@ -1,4 +1,4 @@
- package ge.mziuri.dao;
+package ge.mziuri.dao;
 
 import ge.mziuri.model.Item;
 import java.sql.Connection;

@@ -7,5 +7,5 @@ public enum ProdType {
     CAR,
     GROUND,
     HOUSE,
-    LITLE_STUFF  
+    LITLE_STUFF
 }

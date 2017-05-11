@@ -7,7 +7,7 @@ CREATE TABLE SystemUser (
     );
 
 CREATE TABLE Item( 
-    id INT PRIMARY KEY NOT NULL,
+    id SERIAL PRIMARY KEY NOT NULL,
     name VARCHAR(500),
     description TEXT,
     photoes VARCHAR(500),
@@ -17,7 +17,7 @@ CREATE TABLE Item(
 );
 
 CREATE TABLE Trade (
-    id INT PRIMARY KEY NOT NULL ,
+    id SERIAL PRIMARY KEY NOT NULL ,
     sender_id INT  REFERENCES SYSTEMUSER(ID),
     receiver_id INT REFERENCES SYSTEMUSER(ID),
     send_item_id INT REFERENCES ITEM(ID),

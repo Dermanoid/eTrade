@@ -1,7 +1,6 @@
  package ge.mziuri.model;
  
 public enum ProdType {
-    
     FURNITURE,
     TECH,
     CAR,

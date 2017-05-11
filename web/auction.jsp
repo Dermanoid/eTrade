@@ -1,3 +1,5 @@
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -53,7 +55,10 @@
                 <button type="submit" name="Submit ">S</button>
                 <div/>
         </form>
+        <%
 
+
+        %>
         <form action="AuctionServlet"  method="post">
             <div class="AuctionForm">
                 <img src="Photo" alt="Error: 404" />

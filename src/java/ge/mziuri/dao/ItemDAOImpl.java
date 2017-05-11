@@ -23,7 +23,7 @@ public class ItemDAOImpl implements ItemDAO {
     @Override
     public void addItem(Item item) {
         try {
-            pstmt = con.prepareStatement("INSERT INTO (name,description,photoes,owner_id,point,type) ITEM VALUES (?,?,?,?,?,?,?)");
+            pstmt = con.prepareStatement("INSERT INTO ITEM (name,description,photoes,owner_id,point,type)  VALUES (?,?,?,?,?,?)");
             pstmt.setString(1, item.getName());
             pstmt.setString(2, item.getDescription());
             pstmt.setString(3, StringUtil.getStringFromList(item.getPhotoes()));

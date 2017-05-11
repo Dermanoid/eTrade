@@ -1,5 +1,6 @@
 package ge.mziuri.servlet;
 
+import ge.mziuri.model.Item;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -16,10 +17,14 @@ public class AuctionServlet extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String Name = request.getParameter("Name");
-        String TextDescription = request.getParameter("TextDescription");
-        String Photo = request.getParameter("photo");
+        response.setContentType("text/html");
+        response.setCharacterEncoding("UTF-8");
+        
         RequestDispatcher rd = request.getRequestDispatcher("auction.html");
+       Item item = new Item();
+       
+       
+        
         rd.forward(request, response);
     }
 

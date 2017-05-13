@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Random;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.http.Cookie;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
@@ -49,9 +50,9 @@ public class AddItemServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        
         processRequest(request, response);
     }
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
@@ -162,5 +163,7 @@ public class AddItemServlet extends HttpServlet {
         }
         ItemDAO itemDAO = new ItemDAOImpl();
         itemDAO.addItem(item);
+        RequestDispatcher rd = request.getRequestDispatcher("auction.jsp");
+        rd.forward(request, response);
     }
 }

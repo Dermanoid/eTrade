@@ -1,8 +1,25 @@
+.main  {
+    background-image: url("http://www.planwallpaper.com/static/images/Mario-mario-wallpaper-hd-games-1920x1080.jpg");
+    background-color: #cccccc;
+    background-repeat: no-repeat;
+    background-size: cover ;
+    color:white;
+
+}
+.submit {
+    margin-top: 10px;
+}
+input.submit:hover{background-color:blue;}
+
 .LoginForm {
     text-align: center;
     margin-top: 70px;
 }
-
+input.submit:hover {
+    background-color: rgba(113, 22, 6, 0.85);
+    color: white;
+    border: 2px solid;
+}
 .notCorrectUsername {
     text-align: center;
     color: red ;
@@ -16,9 +33,11 @@
     width: 180px;
     margin: auto;
     margin-top: 70px;
+    border-radius: 10px;
 }
 
 .AuctionForm {
+
     text-align: left;
     border-style: solid;
     border-color: #8C8C8C;
@@ -27,12 +46,28 @@
     width: 180px;
     display:inline-block;
     margin-top: 20px;
-
 }
 .AuctionForm textArea {
+    background-color: rgba(243, 243, 243, 0.47);
     resize: none;
+    display: center;
+    border-color: #f0c7a9;
+}
+.AuctionForm img {
+    height: 110px ;
+    width: 176px ;
+    display: center;
+    border-color: black;
+    border: 1px solid;
+}
+.auctionBody {
+    background-image: url("https://newevolutiondesigns.com/images/freebies/google-material-design-wallpaper-2.jpg");
+    background-color: #cccccc;
+    background-repeat: no-repeat;
+    background-size: cover ;
 
 }
+
 
 .Search  {
     text-align: left; 
@@ -70,10 +105,14 @@
 }
 
 .AUForm {
-
+    background-color: AliceBlue;
+    margin-left: -8px;
+    width: 101.2%;
     text-align: center;
 }
-
+.AUForm ul {
+    margin-top: -8px;
+}
 .AUForm ul li {
     display:inline-block;
     padding: 10px;

@@ -42,12 +42,11 @@
                         var files = document.getElementById('FileUpload').files;
                         if (files.length > 3) {
                             alert("Files count is more then 3");
-                          executeScript();
+                            executeScript();
                         }
                     };
-                </script>        
-             
-                <input  type="submit" value="ნივთის დამატება" />
+                </script>
+                <input type="submit" value="ნივთის დამატება" />
             </form>
         </div>
     </body>

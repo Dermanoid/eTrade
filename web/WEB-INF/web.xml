@@ -8,7 +8,7 @@
         <description>Location to store uploaded file</description>
         <param-name>file-upload</param-name>
         <param-value>
-            C:\Users\Gigi Gloveli\Desktop\images\
+           C:\Users\Gigi Gloveli\Documents\NetBeansProjects\eTrade\web\images\
         </param-value>
     </context-param>
     <welcome-file-list>

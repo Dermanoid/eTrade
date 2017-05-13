@@ -34,7 +34,7 @@ public class LoginServlet extends HttpServlet {
             } else {
                 Cookie cookie = new Cookie("logedInUserId", String.valueOf(user.getId()));
                 response.addCookie(cookie);
-                RequestDispatcher rd = request.getRequestDispatcher("auction.html");
+                RequestDispatcher rd = request.getRequestDispatcher("auction.jsp");
                 rd.forward(request, response);
             }
         } catch (IOException ex) {

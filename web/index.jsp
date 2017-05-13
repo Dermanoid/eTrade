@@ -7,18 +7,18 @@
         <title>შესვლა</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="public/css/style.css">
-    <style>
-		body {
-    		background-color: CornflowerBlue;
-		}
-	</style>
-	</head>
+        <style>
+            body {
+                background-color: CornflowerBlue;
+            }
+        </style>
+    </head>
     <style>
         .IndBodyForm{
-     
+
         }
-       
-        </style>
+
+    </style>
     <body class='IndBodyForm' >
 
         <div class="LoginForm"  style="background-color: AliceBlue;">

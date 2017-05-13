@@ -1,4 +1,9 @@
 
+<%@page import="java.util.List"%>
+<%@page import="java.util.List"%>
+<%@page import="ge.mziuri.model.Item"%>
+<%@page import="ge.mziuri.dao.ItemDAOImpl"%>
+<%@page import="ge.mziuri.dao.ItemDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,10 +18,10 @@
             }
         </style>
     </head >
-    <body>
+    <body class="auctionBody">
         <div class="AUForm"  style="background-color: AliceBlue;">
             <ul>
-                <li style="background-color: #B8CEF7"><a href="auction.html">მთავარი</a></li>
+                <li style="background-color: #B8CEF7"><a href="auction.jsp">მთავარი</a></li>
                 <li><a href="PersonalAcc.html">ჩემი ანგარიში</a></li>
                 <li><a href="AboutUs.html">ჩვენ შესახებ</a></li>
             </ul>
@@ -56,83 +61,16 @@
                 <div/>
         </form>
         <%
-
-
+            ItemDAO itemDAO = new ItemDAOImpl();
+            List<Item> itemlist = itemDAO.getAllItem();
+            for (Item item : itemlist) {
+                out.write("<div class=\"AuctionForm\">");
+                out.write("<img src=\"" + "images\\" + item.getPhotoes().get(0) + "\" alt=\"Error: 404\" />");
+                out.write("<textarea readonly rows=\"5\" cols=\"22.5\">" + item.getDescription() + "</textarea>");
+                out.write("<a href=\"PersonalAcc.html\"> შეთავაზება </a>");
+                out.write("<a  </a>");
+                out.write("</div>");
+            }
         %>
-        <form action="AuctionServlet"  method="post">
-            <div class="AuctionForm">
-                <img src="Photo" alt="Error: 404" />
-                <textarea readonly rows="5" cols="22.5">
-                </textarea>
-                <a href="PersonalAcc.html"> შეთავაზება </a>
-            </div>
-            <div class="AuctionForm">
-                <img src="Photo" alt="Error: 404" />
-                <textarea readonly rows="5" cols="22.5">
-                </textarea>
-                <a href="PersonalAcc.html"> შეთავაზება </a>
-            </div>
-            <div class="AuctionForm">
-                <img src="Photo" alt="Error: 404" />
-                <textarea readonly rows="5" cols="22.5">
-                </textarea>
-                <a href="PersonalAcc.html"> შეთავაზება </a>
-            </div>
-            <div class="AuctionForm">
-                <img src="Photo" alt="Error: 404" />
-                <textarea readonly rows="5" cols="22.5">
-                </textarea>
-                <a href="PersonalAcc.html"> შეთავაზება </a>
-            </div>
-            <div class="AuctionForm">
-                <img src="Photo" alt="Error: 404" />
-                <textarea readonly rows="5" cols="22.5">
-                </textarea>
-                <a href="PersonalAcc.html"> შეთავაზება </a>
-            </div>
-            <div class="AuctionForm">
-                <img src="Photo" alt="Error: 404" />
-                <textarea readonly rows="5" cols="22.5">
-                </textarea>
-                <a href="PersonalAcc.html"> შეთავაზება </a>
-            </div>
-            <div class="AuctionForm">
-                <img src="Photo" alt="Error: 404" />
-                <textarea readonly rows="5" cols="22.5">
-                </textarea>
-                <a href="PersonalAcc.html"> შეთავაზება </a>
-            </div>
-            <div class="AuctionForm">
-                <img src="Photo" alt="Error: 404" />
-                <textarea readonly rows="5" cols="22.5">
-                </textarea>
-                <a href="PersonalAcc.html"> შეთავაზება </a>
-            </div>
-            <div class="AuctionForm">
-                <img src="Photo" alt="Error: 404" />
-                <textarea readonly rows="5" cols="22.5">
-                </textarea>
-                <a href="PersonalAcc.html"> შეთავაზება </a>
-            </div>
-            <div class="AuctionForm">
-                <img src="Photo" alt="Error: 404" />
-                <textarea readonly rows="5" cols="22.5">
-                </textarea>
-                <a href="PersonalAcc.html"> შეთავაზება </a>
-            </div>
-            <div class="AuctionForm">
-                <img src="Photo" alt="Error: 404" />
-                <textarea readonly rows="5" cols="22.5">
-                </textarea>
-                <a href="PersonalAcc.html"> შეთავაზება </a>
-            </div>
-            <div class="AuctionForm">
-                <img src="Photo" alt="Error: 404" />
-                <textarea readonly rows="5" cols="22.5">
-                </textarea>
-                <a href="PersonalAcc.html"> შეთავაზება </a>
-            </div>
-        </form>
-
     </body>
 </html>

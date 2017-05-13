@@ -20,7 +20,7 @@ public class AuctionServlet extends HttpServlet {
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
         
-        RequestDispatcher rd = request.getRequestDispatcher("auction.html");
+        RequestDispatcher rd = request.getRequestDispatcher("auction.jsp");
        Item item = new Item();
        
        

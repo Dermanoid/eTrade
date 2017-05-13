@@ -41,9 +41,8 @@ public class ItemDAOImpl implements ItemDAO {
     @Override
     public List<Item> getAllItem() {
         List<Item> items = new ArrayList<>();
-
         try {
-            pstmt = con.prepareStatement("SELECT * FROM item  ");
+            pstmt = con.prepareStatement("SELECT * FROM item ");
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
                 User user = new User();
@@ -51,7 +50,7 @@ public class ItemDAOImpl implements ItemDAO {
                 item.setId(rs.getInt("id"));
                 item.setName(rs.getString("name"));
                 item.setDescription(rs.getString("description"));
-                item.setPhotoes(StringUtil.getStringListFromString(rs.getString("Photo")));
+                item.setPhotoes(StringUtil.getStringListFromString(rs.getString("photoes")));
                 user.setId(rs.getInt("owner_id"));
                 item.setUser(user);
                 item.setPoint(rs.getInt("Point"));

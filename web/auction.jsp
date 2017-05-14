@@ -12,21 +12,15 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="public/css/style.css">
-        <style>
-            body {
-                background-color: CornflowerBlue;
-            }
-        </style>
     </head >
     <body class="auctionBody">
-        <div class="AUForm"  style="background-color: AliceBlue;">
+        <div class="AUForm">
             <ul>
-                <li style="background-color: #B8CEF7"><a href="auction.jsp">მთავარი</a></li>
-                <li><a href="PersonalAcc.html">ჩემი ანგარიში</a></li>
+                <li><a href="auction.jsp">მთავარი</a></li>
+                <li><a href="PersonalAcc.jsp">ჩემი ანგარიში</a></li>
                 <li><a href="AboutUs.html">ჩვენ შესახებ</a></li>
             </ul>
         </div>
-
         <button class="InboxBtnForm" type="button" id="InboxBtn">Inbox</button>
         <div id="myModal" class="modal">
             <div class="modal-content">
@@ -65,9 +59,9 @@
             List<Item> itemlist = itemDAO.getAllItem();
             for (Item item : itemlist) {
                 out.write("<div class=\"AuctionForm\">");
-                out.write("<img src=\"" + "images\\" + item.getPhotoes().get(0) + "\" alt=\"Error: 404\" />");
+                out.write("<img src=\"" + "images\\" + item.getPhotoes().get(0) + "\" alt=\"ფოტო ვერ მოიძებნა\" />");
                 out.write("<textarea readonly rows=\"5\" cols=\"22.5\">" + item.getDescription() + "</textarea>");
-                out.write("<a href=\"PersonalAcc.html\"> შეთავაზება </a>");
+                out.write("<a href=\"PersonalAcc.jsp\"> შეთავაზება </a>");
                 out.write("<a  </a>");
                 out.write("</div>");
             }

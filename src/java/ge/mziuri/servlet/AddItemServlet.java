@@ -163,7 +163,7 @@ public class AddItemServlet extends HttpServlet {
         }
         ItemDAO itemDAO = new ItemDAOImpl();
         itemDAO.addItem(item);
-        RequestDispatcher rd = request.getRequestDispatcher("auction.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("Spacing.html");
         rd.forward(request, response);
     }
 }

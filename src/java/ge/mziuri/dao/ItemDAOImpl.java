@@ -91,4 +91,11 @@ public class ItemDAOImpl implements ItemDAO {
         }
         return items;
     }
+
+    @Override
+    public List<Item> GetAllMyItems(int id) {
+        return null;
+      // აქ დაწერე მეთოდი რომელიც წამოიღებს მარტო იმ ნივთებს რომელიც შენ დაამატე... მოგეხმარები და გეტყვი რაღაც ნაწილს "SELECT * FROM item WHERE Owner_id=?" 
+    // გიო შენი გასაკეთებელია :) და არა დათოსი 
+    }
 }

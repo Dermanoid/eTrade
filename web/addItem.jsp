@@ -1,6 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html style="background-color: #9e9e9e">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,9 +27,10 @@
                 <h5>ტექსტის ინფორმაცია : </h5>
                 <textarea name="description" rows="5" cols="5"></textarea> <br>
                 <h5>დაამატეთ ფოტო : </h5> 
-                <img id="inp1" width="320" height="200"  src="Photo" alt="Error: 404" /> 
-                <img width="320" height="200" id="inp2" src="Photo" alt="Error: 404" /> 
-                <img width="320" height="200" id="inp3" src="Photo" alt="Error: 404" /> <br>
+                <img id="inp1" width="320" height="200"  src="Photo" alt="Photo 1" /> 
+                <img width="320" height="200" id="inp2" src="Photo" alt="Photo 2" /> 
+                <img width="320" height="200" id="inp3" src="Photo" alt="Photo 3" /> <br>
+                         <h5 style="margin-top: 1px;margin-bottom: 6px"> მაქსიმუმ 3 ფოტო !!! </h5>
                 <input id="FileUpload" style="margin-bottom: 20px; margin-left: 90px" type="file" name="file" accept="image/*" onchange="loadFile(event)" multiple  > <br>
                 <script>
                     var loadFile = function (event) {
@@ -41,7 +42,7 @@
                         output.src = URL.createObjectURL(event.target.files[2]);
                         var files = document.getElementById('FileUpload').files;
                         if (files.length > 3) {
-                            alert("Files count is more then 3");
+                            alert("არა უმეტეს 3 ფოტოსი ");
                             executeScript();
                         }
                     };

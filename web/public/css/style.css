@@ -55,7 +55,7 @@ input.submit:hover {
 }
 
 .AuctionForm {
-
+    color : white; 
     text-align: left;
     border-style: solid;
     border-color: #8C8C8C;
@@ -78,8 +78,13 @@ input.submit:hover {
     border-color: black;
     border: 1px solid;
 }
+.AuctionForm h4 {
+    margin-top: 2px ;
+    margin-bottom: 5px;
+    text-align: center;
+}
 .auctionBody {
-    background-image: url("http://gencept.com/wp-content/uploads/2016/04/Wallpaper-of-the-Week-25-Material-Design-Inspired-Wallpapers_03-@-GenCept.jpg");
+    background-image: url("http://cdn.wallpapersafari.com/95/55/ahsUpl.jpg");
     background-color: #cccccc;
     background-repeat: no-repeat;
     background-size: cover ;

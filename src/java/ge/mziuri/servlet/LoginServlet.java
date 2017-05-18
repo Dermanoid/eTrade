@@ -21,12 +21,13 @@ public class LoginServlet extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException {
         try {
+            response.setContentType("text/html");
+            response.setCharacterEncoding("UTF-8");
+            request.setCharacterEncoding("UTF-8");
             String username = request.getParameter("username");
             String password = request.getParameter("password");
             UserDAO userDAO = new UserDAOImpl();
             User user = userDAO.login(username, String.valueOf(password.hashCode()));
-            response.setContentType("text/html");
-            response.setCharacterEncoding("UTF-8");
             if (user == null) {
                 RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
                 request.setAttribute("incorrectPassword", true);

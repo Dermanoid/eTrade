@@ -57,6 +57,7 @@ public class AddItemServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
+        request.setCharacterEncoding("UTF-8");
         Map<String, String> table = new HashMap<>();
         List<String> photos = new ArrayList<>();
         try {

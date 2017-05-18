@@ -19,12 +19,9 @@ public class AuctionServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
-        
+        request.setCharacterEncoding("UTF-8");
         RequestDispatcher rd = request.getRequestDispatcher("auction.jsp");
-       Item item = new Item();
-       
-       
-        
+        Item item = new Item();
         rd.forward(request, response);
     }
 

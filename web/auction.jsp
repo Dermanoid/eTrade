@@ -59,9 +59,11 @@
             List<Item> itemlist = itemDAO.getAllItem();
             for (Item item : itemlist) {
                 out.write("<div class=\"AuctionForm\">");
+                out.write("<h4>" + item.getName() + "</h4>");
+
                 out.write("<img src=\"" + "images\\" + item.getPhotoes().get(0) + "\" alt=\"ფოტო ვერ მოიძებნა\" />");
                 out.write("<textarea readonly rows=\"5\" cols=\"22.5\">" + item.getDescription() + "</textarea>");
-                out.write("<a href=\"PersonalAcc.jsp\"> შეთავაზება </a>");
+                out.write("<a href=\"PersonalAcc.jsp\"> შეთავაზება </a>" + "<a href=\"\">     More... </a>"  );
                 out.write("<a  </a>");
                 out.write("</div>");
             }

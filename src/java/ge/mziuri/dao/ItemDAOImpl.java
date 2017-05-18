@@ -39,10 +39,11 @@ public class ItemDAOImpl implements ItemDAO {
     }
 
     @Override
-    public List<Item> getAllItem() {
+    public List<Item> getAllItem(int id) {
         List<Item> items = new ArrayList<>();
         try {
-            pstmt = con.prepareStatement("SELECT * FROM item ");
+            pstmt = con.prepareStatement("SELECT * FROM item WHERE owner_id <> ?");
+            pstmt.setInt(1, id);
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
                 User user = new User();
@@ -93,8 +94,8 @@ public class ItemDAOImpl implements ItemDAO {
     }
 
     @Override
-    public List<Item> GetAllMyItems(int id) {
- 
+    public List<Item> getAllMyItems(int id) {
+
         List<Item> items = new ArrayList<>();
         try {
             pstmt = con.prepareStatement("SELECT * FROM item WHERE owner_id=?");
@@ -103,6 +104,7 @@ public class ItemDAOImpl implements ItemDAO {
             while (rs.next()) {
                 User user = new User();
                 Item item = new Item();
+                item.setId(rs.getInt("id"));
                 item.setName(rs.getString("name"));
                 item.setDescription(rs.getString("description"));
                 item.setPhotoes(StringUtil.getStringListFromString(rs.getString("photoes")));
@@ -119,5 +121,17 @@ public class ItemDAOImpl implements ItemDAO {
         return items;
 
     }
-    
+
+    @Override
+    public void deleteItem(int id) {
+        try {
+            pstmt = con.prepareStatement("DELETE FROM ITEM WHERE id=?");
+            pstmt.setInt(1, id);
+            pstmt.executeUpdate();
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            DatabaseUtil.closeConnection(con);
+        }
+    }
 }

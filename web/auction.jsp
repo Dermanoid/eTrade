@@ -54,9 +54,21 @@
                 <button type="submit" name="Submit ">S</button>
                 <div/>
         </form>
+        
         <%
+            int id = 0;
+            if (request.getAttribute("logedInUserId") != null) {
+                id = (int)request.getAttribute("logedInUserId");
+            }
+            if (id == 0) {
+                for (Cookie cookie : request.getCookies()) {
+                    if (cookie.getName().equals("logedInUserId")) {
+                        id = Integer.parseInt(cookie.getValue());
+                    }
+                }
+            }
             ItemDAO itemDAO = new ItemDAOImpl();
-            List<Item> itemlist = itemDAO.getAllItem();
+            List<Item> itemlist = itemDAO.getAllItem(id);
             for (Item item : itemlist) {
                 out.write("<div class=\"AuctionForm\">");
                 out.write("<h4>" + item.getName() + "</h4>");

@@ -7,9 +7,11 @@ public interface ItemDAO {
 
     void addItem(Item item);
 
-    List<Item> getAllItem();
+    List<Item> getAllItem(int id);
 
     List<Item> getAllItemByName(String name);
 
-    List<Item> GetAllMyItems(int id);
+    List<Item> getAllMyItems(int id);
+
+    void deleteItem(int id);
 };

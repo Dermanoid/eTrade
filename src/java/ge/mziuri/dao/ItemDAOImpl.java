@@ -94,8 +94,30 @@ public class ItemDAOImpl implements ItemDAO {
 
     @Override
     public List<Item> GetAllMyItems(int id) {
-        return null;
-      // აქ დაწერე მეთოდი რომელიც წამოიღებს მარტო იმ ნივთებს რომელიც შენ დაამატე... მოგეხმარები და გეტყვი რაღაც ნაწილს "SELECT * FROM item WHERE Owner_id=?" 
-    // გიო შენი გასაკეთებელია :) და არა დათოსი 
+ 
+        List<Item> items = new ArrayList<>();
+        try {
+            pstmt = con.prepareStatement("SELECT * FROM item WHERE owner_id=?");
+            pstmt.setInt(1, id);
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                User user = new User();
+                Item item = new Item();
+                item.setName(rs.getString("name"));
+                item.setDescription(rs.getString("description"));
+                item.setPhotoes(StringUtil.getStringListFromString(rs.getString("photoes")));
+                user.setId(rs.getInt("owner_id"));
+                item.setUser(user);
+                item.setPoint(rs.getInt("Point"));
+                items.add(item);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            DatabaseUtil.closeConnection(con);
+        }
+        return items;
+
     }
+    
 }

@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>აუქციონი</title>
+        <title>Auction</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="public/css/style.css">
@@ -16,16 +16,18 @@
     <body class="auctionBody">
         <div class="AUForm">
             <ul>
-                <li><a href="auction.jsp">მთავარი</a></li>
-                <li><a href="PersonalAcc.jsp">ჩემი ანგარიში</a></li>
-                <li><a href="AboutUs.html">ჩვენ შესახებ</a></li>
+                <li><a href="auction.jsp">Main</a></li>
+                <li><a href="PersonalAcc.jsp">My Account</a></li>
+                <li><a href="AboutUs.html">About Us</a></li>
             </ul>
         </div>
         <button class="InboxBtnForm" type="button" id="InboxBtn">Inbox</button>
         <div id="myModal" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
-                <p>Nothing To Show</p>
+                <p>
+
+                </p>
             </div>
 
         </div>
@@ -48,11 +50,11 @@
 
         </script>  
 
-        <form action="" method="post">
+        <form action="SearchServlet" method="post">
             <div class="Search">    
                 <input type="text" name="search"  placeholder="Search..">
                 <button type="submit" name="Submit ">S</button>
-                <div/>
+            <div/>
         </form>
         
         <%
@@ -68,14 +70,19 @@
                 }
             }
             ItemDAO itemDAO = new ItemDAOImpl();
-            List<Item> itemlist = itemDAO.getAllItem(id);
+            List<Item> itemlist;
+            if (request.getAttribute("searchedName") != null) {
+                itemlist = itemDAO.getAllItemByName((String)request.getAttribute("searchedName"), id);
+            } else {
+                itemlist = itemDAO.getAllItem(id);
+            }
             for (Item item : itemlist) {
                 out.write("<div class=\"AuctionForm\">");
                 out.write("<h4>" + item.getName() + "</h4>");
 
-                out.write("<img src=\"" + "images\\" + item.getPhotoes().get(0) + "\" alt=\"ფოტო ვერ მოიძებნა\" />");
+                out.write("<img src=\"" + "images\\" + item.getPhotoes().get(0) + "\" alt=\"Cant Find Photo\" />");
                 out.write("<textarea readonly rows=\"5\" cols=\"22.5\">" + item.getDescription() + "</textarea>");
-                out.write("<a href=\"PersonalAcc.jsp\"> შეთავაზება </a>" + "<a href=\"\">     More... </a>"  );
+                out.write("<a href=\"PersonalAcc.jsp\"> Offer </a>" + "<a href=\"DetailedInfo.jsp\">     More... </a>"  );
                 out.write("<a  </a>");
                 out.write("</div>");
             }

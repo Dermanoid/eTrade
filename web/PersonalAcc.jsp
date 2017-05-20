@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>პირადი ანგარიში</title>
+        <title>Personal Acc.</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="public/css/style.css">
@@ -14,9 +14,9 @@
     <body class="PaBody">
         <div class="AUForm1"  >
             <ul>
-                <li><a href="auction.jsp">მთავარი</a></li>
-                <li><a href="PersonalAcc.jsp">ჩემი ანგარიში</a></li>
-                <li><a href="AboutUs.html">ჩვენ შესახებ</a></li>
+                <li><a href="auction.jsp">Main</a></li>
+                <li><a href="PersonalAcc.jsp">My Account</a></li>
+                <li><a href="AboutUs.html">About Us</a></li>
             </ul>
         </div>
         <%
@@ -39,6 +39,6 @@
                 out.write("</form>");
             }
         %>
-          <a name="Additemlink"  href="addItem.jsp">ნივთის დამატება</a>
+          <a name="Additemlink"  href="addItem.jsp">Add Item</a>
     </body>
 </html>

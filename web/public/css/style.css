@@ -7,6 +7,38 @@
     color: #999999;;
 
 }
+.detailedForm {
+    background-image: url("http://cdn.wallpapersafari.com/95/55/ahsUpl.jpg");
+    background-color: #cccccc;
+    background-repeat: no-repeat;
+    background-size: cover ;
+
+}
+.Itemform{
+    text-align: center;
+    color: white;
+}
+.Itemform img{
+    display: inline-block;
+    width:380px;
+    height:285px;
+    margin-right: 10px;
+    margin-left: 40px;
+    border: solid;
+    border-width: 2px;
+    border-color: white;
+}
+.Itemform textarea{
+    width: 600px ;
+     height: 120px ;
+     resize:  none;
+}
+.Itemform button {
+    display: center;
+    margin-top: 10px;
+}
+
+    
 .submit {
     margin-top: 10px;
 }
@@ -237,12 +269,6 @@ input.submit:hover {
     text-decoration: none;
     cursor: pointer;
 }
-
-
-
-
-
-
 /* scroll bar style */
 .myBox {
     border: none;

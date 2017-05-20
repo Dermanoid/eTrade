@@ -9,9 +9,11 @@ public interface ItemDAO {
 
     List<Item> getAllItem(int id);
 
-    List<Item> getAllItemByName(String name);
+    List<Item> getAllItemByName(String name, int id);
 
     List<Item> getAllMyItems(int id);
 
     void deleteItem(int id);
+    
+    void detailedItem(int id);
 };

@@ -12,7 +12,7 @@ import java.util.List;
 
 public class ItemDAOImpl implements ItemDAO {
 
-    private Connection con;
+    private final Connection con;
 
     private PreparedStatement pstmt;
 
@@ -66,12 +66,13 @@ public class ItemDAOImpl implements ItemDAO {
     }
 
     @Override
-    public List<Item> getAllItemByName(String name) {
+    public List<Item> getAllItemByName(String name, int id) {
         List<Item> items = new ArrayList<>();
 
         try {
-            pstmt = con.prepareStatement("SELECT * FROM item WHERE NAME=? ");
-            pstmt.setString(1, name);
+            pstmt = con.prepareStatement("SELECT * FROM item WHERE name LIKE ? AND owner_id <> ?");
+            pstmt.setString(1, "%" + name + "%");
+            pstmt.setInt(2, id);
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
                 User user = new User();
@@ -79,7 +80,7 @@ public class ItemDAOImpl implements ItemDAO {
                 item.setId(rs.getInt("id"));
                 item.setName(rs.getString("name"));
                 item.setDescription(rs.getString("description"));
-                item.setPhotoes(StringUtil.getStringListFromString(rs.getString("Photo")));
+                item.setPhotoes(StringUtil.getStringListFromString(rs.getString("photoes")));
                 user.setId(rs.getInt("owner_id"));
                 item.setUser(user);
                 item.setPoint(rs.getInt("Point"));
@@ -133,5 +134,25 @@ public class ItemDAOImpl implements ItemDAO {
         } finally {
             DatabaseUtil.closeConnection(con);
         }
+    }
+
+    @Override
+    public void detailedItem(int id) {
+        try {
+            Item item = new Item();
+            pstmt = con.prepareStatement("SELECT * FROM ITEM WHERE id=?");
+            pstmt.setString(1, item.getName());
+            pstmt.setString(2, item.getDescription());
+            pstmt.setString(3, StringUtil.getStringFromList(item.getPhotoes()));
+            pstmt.setInt(4, item.getUser().getId());
+            pstmt.setInt(5, item.getPoint());
+            pstmt.setString(6, item.getType().name());
+            pstmt.executeUpdate();
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            DatabaseUtil.closeConnection(con);
+        }
+
     }
 }

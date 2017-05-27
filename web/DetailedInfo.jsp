@@ -43,12 +43,13 @@
                     out.write("<img src=\"" + "images\\" + item.getPhotoes().get(2) + "\" alt=\"Cant Find Photo\" />");
                     out.write("<textarea readonly rows=\"5\" cols=\"22.5\">" + item.getDescription() + "</textarea>");
                     out.write("<form class=\"Itemform\"action=\"OfferServlet\" method=\"POST\">");
-                    out.write("<button type=\"submit\">Offer</button>");
                     out.write("</form>");
                     out.write("<a  </a>");
                     out.write("</form>");
+                
                 }
             %>
+               <button style="margin-top: 5px; margin-left:48%; width: 90px; height:30px;">Offer</button>
         </div>
     </body>
 </html>

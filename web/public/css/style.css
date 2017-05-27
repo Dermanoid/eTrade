@@ -8,11 +8,14 @@
 
 }
 .detailedForm {
-    background-image: url("http://cdn.wallpapersafari.com/95/55/ahsUpl.jpg");
-    background-color: #cccccc;
+   
+    background-color: black;
     background-repeat: no-repeat;
     background-size: cover ;
 
+}
+.detailedForm button {
+    margin-top: 10px;
 }
 .Itemform{
     text-align: center;

@@ -2,48 +2,28 @@ package ge.mziuri.model;
 
 public class Trade {
 
-    private int ownerID;
+    private Item sendItem;
     
-    private int reciverID;
-    
-    private int senditemID;
-    
-    private int reciveitemID;
+    private Item receiveItem;
     
     private boolean traded;
     
     private boolean seen;
 
-    public int getOwnerID() {
-        return ownerID;
+    public Item getSendItem() {
+        return sendItem;
     }
 
-    public void setOwnerID(int ownerID) {
-        this.ownerID = ownerID;
+    public void setSendItem(Item sendItem) {
+        this.sendItem = sendItem;
     }
 
-    public int getReciverID() {
-        return reciverID;
+    public Item getReceiveItem() {
+        return receiveItem;
     }
 
-    public void setReciverID(int reciverID) {
-        this.reciverID = reciverID;
-    }
-
-    public int getSenditemID() {
-        return senditemID;
-    }
-
-    public void setSenditemID(int senditemID) {
-        this.senditemID = senditemID;
-    }
-
-    public int getReciveitemID() {
-        return reciveitemID;
-    }
-
-    public void setReciveitemID(int reciveitemID) {
-        this.reciveitemID = reciveitemID;
+    public void setReceiveItem(Item receiveItem) {
+        this.receiveItem = receiveItem;
     }
 
     public boolean isTraded() {

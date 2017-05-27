@@ -28,13 +28,21 @@
             }
             ItemDAO itemDAO = new ItemDAOImpl();
             List<Item> itemList = itemDAO.getAllMyItems(id);
+            boolean offer = Boolean.parseBoolean(request.getParameter("offer"));
             for (Item item : itemList) {
                 out.write("<form action=\"DeleteItemServlet\" method=\"POST\" class=\"AuctionForm\">");
                 out.write("<h4>" + item.getName() + "</h4>");
                 out.write("<img src=\"" + "images\\" + item.getPhotoes().get(0) + "\" alt=\"Cant Find Photo\" />");
                 out.write("<textarea readonly rows=\"5\" cols=\"22.5\">" + item.getDescription() + "</textarea>");
                 out.write("<input name=\"itemId\" type=\"hidden\" value=\"" + item.getId() + "\"> </input>");
-                out.write("<input type=\"Submit\" value = \"Delete\"></input>");
+                if (offer) {
+                    out.write("<input name=\"sendItemId\" type=\"hidden\" value=\"" + request.getParameter("sendItemId") + "\"> </input>");
+                    out.write("<input name=\"trade\" type=\"hidden\" value=\"true\"> </input>");
+                    out.write("<input type=\"Submit\" value = \"Trade\"></input>");
+                } else {
+                    out.write("<input name=\"trade\" type=\"hidden\" value=\"false\"> </input>");
+                    out.write("<input type=\"Submit\" value = \"Delete\"></input>");
+                }
                 out.write("<a  </a>");
                 out.write("</form>");
             }

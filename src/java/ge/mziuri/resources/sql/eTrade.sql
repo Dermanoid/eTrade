@@ -18,8 +18,6 @@ CREATE TABLE Item(
 
 CREATE TABLE Trade (
     id SERIAL PRIMARY KEY NOT NULL ,
-    sender_id INT  REFERENCES SYSTEMUSER(ID),
-    receiver_id INT REFERENCES SYSTEMUSER(ID),
     send_item_id INT REFERENCES ITEM(ID),
     received_item_id INT REFERENCES ITEM(ID),
     traded BOOLEAN default false,
